@@ -1,0 +1,11 @@
+C:\Varios Nahuel\Material Cursos Platzi\Curso .net\practicas\coreEscuela\bin\Debug\netcoreapp2.1\coreEscuela.deps.json
+C:\Varios Nahuel\Material Cursos Platzi\Curso .net\practicas\coreEscuela\bin\Debug\netcoreapp2.1\coreEscuela.runtimeconfig.json
+C:\Varios Nahuel\Material Cursos Platzi\Curso .net\practicas\coreEscuela\bin\Debug\netcoreapp2.1\coreEscuela.runtimeconfig.dev.json
+C:\Varios Nahuel\Material Cursos Platzi\Curso .net\practicas\coreEscuela\bin\Debug\netcoreapp2.1\coreEscuela.dll
+C:\Varios Nahuel\Material Cursos Platzi\Curso .net\practicas\coreEscuela\bin\Debug\netcoreapp2.1\coreEscuela.pdb
+C:\Varios Nahuel\Material Cursos Platzi\Curso .net\practicas\coreEscuela\obj\Debug\netcoreapp2.1\coreEscuela.csprojAssemblyReference.cache
+C:\Varios Nahuel\Material Cursos Platzi\Curso .net\practicas\coreEscuela\obj\Debug\netcoreapp2.1\coreEscuela.csproj.CoreCompileInputs.cache
+C:\Varios Nahuel\Material Cursos Platzi\Curso .net\practicas\coreEscuela\obj\Debug\netcoreapp2.1\coreEscuela.AssemblyInfoInputs.cache
+C:\Varios Nahuel\Material Cursos Platzi\Curso .net\practicas\coreEscuela\obj\Debug\netcoreapp2.1\coreEscuela.AssemblyInfo.cs
+C:\Varios Nahuel\Material Cursos Platzi\Curso .net\practicas\coreEscuela\obj\Debug\netcoreapp2.1\coreEscuela.dll
+C:\Varios Nahuel\Material Cursos Platzi\Curso .net\practicas\coreEscuela\obj\Debug\netcoreapp2.1\coreEscuela.pdb

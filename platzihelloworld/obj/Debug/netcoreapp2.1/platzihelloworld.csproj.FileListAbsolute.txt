@@ -1,0 +1,11 @@
+C:\Varios Nahuel\Material Cursos Platzi\Curso .net\practicas\platzihelloworld\bin\Debug\netcoreapp2.1\platzihelloworld.deps.json
+C:\Varios Nahuel\Material Cursos Platzi\Curso .net\practicas\platzihelloworld\bin\Debug\netcoreapp2.1\platzihelloworld.runtimeconfig.json
+C:\Varios Nahuel\Material Cursos Platzi\Curso .net\practicas\platzihelloworld\bin\Debug\netcoreapp2.1\platzihelloworld.runtimeconfig.dev.json
+C:\Varios Nahuel\Material Cursos Platzi\Curso .net\practicas\platzihelloworld\bin\Debug\netcoreapp2.1\platzihelloworld.dll
+C:\Varios Nahuel\Material Cursos Platzi\Curso .net\practicas\platzihelloworld\bin\Debug\netcoreapp2.1\platzihelloworld.pdb
+C:\Varios Nahuel\Material Cursos Platzi\Curso .net\practicas\platzihelloworld\obj\Debug\netcoreapp2.1\platzihelloworld.csprojAssemblyReference.cache
+C:\Varios Nahuel\Material Cursos Platzi\Curso .net\practicas\platzihelloworld\obj\Debug\netcoreapp2.1\platzihelloworld.csproj.CoreCompileInputs.cache
+C:\Varios Nahuel\Material Cursos Platzi\Curso .net\practicas\platzihelloworld\obj\Debug\netcoreapp2.1\platzihelloworld.AssemblyInfoInputs.cache
+C:\Varios Nahuel\Material Cursos Platzi\Curso .net\practicas\platzihelloworld\obj\Debug\netcoreapp2.1\platzihelloworld.AssemblyInfo.cs
+C:\Varios Nahuel\Material Cursos Platzi\Curso .net\practicas\platzihelloworld\obj\Debug\netcoreapp2.1\platzihelloworld.dll
+C:\Varios Nahuel\Material Cursos Platzi\Curso .net\practicas\platzihelloworld\obj\Debug\netcoreapp2.1\platzihelloworld.pdb
