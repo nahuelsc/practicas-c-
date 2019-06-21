@@ -687,11 +687,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Varios Nahuel\\Material Cursos Platzi\\Curso .net\\practicas\\coreEscuela\\coreEscuela.csproj",
+      "projectUniqueName": "c:\\Varios Nahuel\\Material Cursos Platzi\\Cursos\\Curso .net\\practicas\\coreEscuela\\coreEscuela.csproj",
       "projectName": "coreEscuela",
-      "projectPath": "C:\\Varios Nahuel\\Material Cursos Platzi\\Curso .net\\practicas\\coreEscuela\\coreEscuela.csproj",
+      "projectPath": "c:\\Varios Nahuel\\Material Cursos Platzi\\Cursos\\Curso .net\\practicas\\coreEscuela\\coreEscuela.csproj",
       "packagesPath": "C:\\Users\\NahuelNTBK\\.nuget\\packages\\",
-      "outputPath": "C:\\Varios Nahuel\\Material Cursos Platzi\\Curso .net\\practicas\\coreEscuela\\obj\\",
+      "outputPath": "c:\\Varios Nahuel\\Material Cursos Platzi\\Cursos\\Curso .net\\practicas\\coreEscuela\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

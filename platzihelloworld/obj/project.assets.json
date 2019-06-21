@@ -687,11 +687,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Varios Nahuel\\Material Cursos Platzi\\Curso .net\\practicas\\platzihelloworld\\platzihelloworld.csproj",
+      "projectUniqueName": "c:\\Varios Nahuel\\Material Cursos Platzi\\Cursos\\Curso .net\\practicas\\platzihelloworld\\platzihelloworld.csproj",
       "projectName": "platzihelloworld",
-      "projectPath": "C:\\Varios Nahuel\\Material Cursos Platzi\\Curso .net\\practicas\\platzihelloworld\\platzihelloworld.csproj",
+      "projectPath": "c:\\Varios Nahuel\\Material Cursos Platzi\\Cursos\\Curso .net\\practicas\\platzihelloworld\\platzihelloworld.csproj",
       "packagesPath": "C:\\Users\\NahuelNTBK\\.nuget\\packages\\",
-      "outputPath": "C:\\Varios Nahuel\\Material Cursos Platzi\\Curso .net\\practicas\\platzihelloworld\\obj\\",
+      "outputPath": "c:\\Varios Nahuel\\Material Cursos Platzi\\Cursos\\Curso .net\\practicas\\platzihelloworld\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

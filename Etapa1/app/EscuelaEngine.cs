@@ -1,3 +1,4 @@
+using System.Dynamic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,7 @@ using static System.Console;
 
 namespace CorEscuela
 {
-    public class EscuelaEngine
+    public sealed class EscuelaEngine
     {
         public Escuela Escuela { get; set; }
 
@@ -24,13 +25,122 @@ namespace CorEscuela
             CargarEvaluaciones();
         }
 
+        public Dictionary<string, ObjetoEscuelaBase> GetDiccionarioObjetos()
+        {
+            var diccionario = new Dictionary<string, ObjetoEscuelaBase>();
+
+            return diccionario;
+        }
+        //sobre carga de metodos    
+        public IReadOnlyList<ObjetoEscuelaBase> GetObjetosEscuela(
+                bool traeEvaluaciones = true,
+                bool traeAlumnos = true,
+                bool traeAsignaturas = true,
+                bool traeCursos = true
+                )
+        {
+            return GetObjetosEscuela(out int dummy, out dummy, out dummy, out dummy);
+        }
+        public IReadOnlyList<ObjetoEscuelaBase> GetObjetosEscuela(
+                out int conteoEvaluaciones,
+                bool traeEvaluaciones = true,
+                bool traeAlumnos = true,
+                bool traeAsignaturas = true,
+                bool traeCursos = true
+                )
+        {
+            return GetObjetosEscuela(out conteoEvaluaciones, out int dummy, out dummy, out dummy);
+        }
+        public IReadOnlyList<ObjetoEscuelaBase> GetObjetosEscuela(
+                out int conteoEvaluaciones,
+                out int conteoAlumnos,
+                out int conteoAsignaturas,
+                bool traeEvaluaciones = true,
+                bool traeAlumnos = true,
+                bool traeAsignaturas = true,
+                bool traeCursos = true
+                )
+        {
+            return GetObjetosEscuela(out conteoEvaluaciones, out conteoAlumnos, out conteoAsignaturas, out int dummy);
+        }
+        public IReadOnlyList<ObjetoEscuelaBase> GetObjetosEscuela(
+            out int conteoEvaluaciones,
+            out int conteoAlumnos,
+            out int conteoAsignaturas,
+            out int conteoCursos,
+            bool traeEvaluaciones = true,
+            bool traeAlumnos  = true,
+            bool traeAsignaturas  = true,
+            bool traeCursos  = true
+            )
+        {
+            /* conteoEvaluaciones = 0;
+            conteoAlumnos = 0;
+            conteoAsignaturas = 0;
+            conteoCursos = 0; */
+            conteoEvaluaciones = conteoAlumnos = conteoAsignaturas = conteoCursos = 0;
+
+            var listObj = new List<ObjetoEscuelaBase>();
+            listObj.Add(Escuela);
+
+            if(traeCursos)
+                listObj.AddRange(Escuela.Curso);
+            conteoCursos += Escuela.Curso.Count;
+
+            foreach (var curso in Escuela.Curso)
+            {
+                conteoAsignaturas += curso.Asignaturas.Count;
+                if(traeAsignaturas)
+                    listObj.AddRange(curso.Asignaturas);
+
+                conteoAlumnos += curso.Alumnos.Count;
+                if(traeAlumnos)
+                    listObj.AddRange(curso.Alumnos);
+
+                if(traeEvaluaciones)
+                {
+                    foreach (var alumno in curso.Alumnos)
+                    {
+                        listObj.AddRange(alumno.Evaluaciones);
+                        conteoEvaluaciones += alumno.Evaluaciones.Count;
+                    }
+                }
+            }
+
+            return listObj;
+        }
+
+        public IReadOnlyList<ObjetoEscuelaBase> GetObjetosEscuela()
+        {
+            var listObj = new List<ObjetoEscuelaBase>();
+            listObj.Add(Escuela);
+            listObj.AddRange(Escuela.Curso);
+
+
+            foreach (var curso in Escuela.Curso)
+            {
+                listObj.AddRange(curso.Asignaturas);
+                listObj.AddRange(curso.Alumnos);
+
+                foreach (var alumno in curso.Alumnos)
+                {
+                    listObj.AddRange(alumno.Evaluaciones);
+                }
+            }
+
+            return listObj.AsReadOnly();
+        }
+
+#region Metodos de carga
         private void CargarEvaluaciones()
         {
             foreach (var curso in Escuela.Curso)
             {
-                foreach (var asignatura in curso.Asignaturas)
+                //foreach (var asignatura in curso.Asignaturas)
+                foreach (var alumno in curso.Alumnos)
                 {
-                    foreach (var alumno in curso.Alumnos)
+                    //foreach (var alumno in curso.Alumnos)
+                    foreach (var asignatura in curso.Asignaturas)
                     {
                         Random rnd = new Random();
                         //float aleatorio = rnd.Next(0, 5);
@@ -44,13 +154,14 @@ namespace CorEscuela
                                 Alumno = alumno
                             };
                             alumno.Evaluaciones.Add(ev);
+                            WriteLine($"{curso.Nombre}, {alumno.Nombre}, {ev.Nombre}, {ev.Nota}");
                             
                         }
                     }
                 }
             }
         }
-
+        
         private void CargarAsignaturas()
         {
             var listaAsignatura = new List<Asignatura>(){
@@ -96,4 +207,5 @@ namespace CorEscuela
             }
         }
     }
+    #endregion
 }

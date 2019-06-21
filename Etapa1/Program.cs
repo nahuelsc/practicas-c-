@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using CorEscuela.Entidades;
 using CorEscuela.Util;
 using static System.Console;
@@ -16,8 +17,56 @@ namespace CorEscuela
                 engine.Inicializar();
 
                 Printer.WriteTitle("BIENVENIDOS A LA ESCUELA");
-                Printer.Beep(10000, cantidad:10);   
+                //Printer.Beep(10000, cantidad:10);   
                 imprimirCursosEscuela(engine.Escuela);
+
+                
+                
+                
+                /* Printer.WriteTitle("Diccionario");
+                var dic = new Dictionary<String, String>();
+                dic["luna"] = "cuerpo celeste que gira alrededor de la tierra";
+                WriteLine(dic["luna"]);
+                /* dic.Add("luna", "Protagonista de soy Luna");
+                WriteLine("luna"); */
+
+
+                //var obj = new ObjetoEscuelaBase();
+                /* Printer.DrawLine(20);
+                Printer.DrawLine(20);
+                Printer.DrawLine(20);
+                Printer.WriteTitle("Pruebas de Polimorfismo");
+                var alumnoTest = new Alumnos{Nombre = "Nahuel Schimpf"};
+                Printer.WriteTitle("Alumno");
+                WriteLine($"Alumno: {alumnoTest.Nombre}");
+                WriteLine($"Id: {alumnoTest.UniqueId}");
+                WriteLine($"Typo: {alumnoTest.GetType()}");
+
+                ObjetoEscuelaBase ob = alumnoTest;
+                WriteLine("ObjetoEscuela");
+                WriteLine($"Nombre: {ob.Nombre}");
+                WriteLine($"Id: {ob.UniqueId}");
+                WriteLine($"Typo: {ob.GetType()}");
+
+                var evaluacion = new Evaluaciones(){Nombre="Evaluacion de Matematicas",Nota=4.5f};
+                Printer.WriteTitle("Evaluacion");
+                WriteLine($"Evaluacion: {evaluacion.Nombre}");
+                WriteLine($"Id: {evaluacion.Nota}");
+                WriteLine($"Id: {evaluacion.UniqueId}");
+                WriteLine($"Typo: {evaluacion.GetType()}");
+
+                //ob = evaluacion;
+                WriteLine("ObjetoEscuela");
+                WriteLine($"Nombre: {ob.Nombre}");
+                WriteLine($"Id: {ob.UniqueId}");
+                WriteLine($"Typo: {ob.GetType()}");
+
+                if(ob is Alumnos)
+                {
+                    Alumnos alumnoRecuperado = (Alumnos)ob;
+                }
+
+                Alumnos alumnoRecuperado2 = ob as Alumnos;*/
 
                 /* var escuela = new Escuela("Platzi Academy", 2012,TiposEscuela.Primaria,
                             ciudad: "Bogota", pais: "Colombia");
