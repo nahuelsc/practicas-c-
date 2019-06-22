@@ -20,7 +20,7 @@ namespace CorEscuela
                 //Printer.Beep(10000, cantidad:10);   
                 imprimirCursosEscuela(engine.Escuela);
 
-                
+                var dictmp = engine.GetDiccionarioObjetos();
                 
                 
                 /* Printer.WriteTitle("Diccionario");
