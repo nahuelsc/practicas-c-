@@ -25,16 +25,15 @@ namespace CorEscuela
             CargarEvaluaciones();
         }
 
-        public Dictionary<string, IEnumerable<ObjetoEscuelaBase>> GetDiccionarioObjetos()
+        public Dictionary<LlaveDiccionario, IEnumerable<ObjetoEscuelaBase>> GetDiccionarioObjetos()
         {
-            var diccionario = new Dictionary<string, IEnumerable<ObjetoEscuelaBase>>();
-
+            var diccionario = new Dictionary<LlaveDiccionario, IEnumerable<ObjetoEscuelaBase>>();
 
 
             
-            diccionario.Add("Escuela", Escuela);
-            diccionario.Add("Cursos", Escuela.Curso.Cast<ObjetoEscuelaBase>());
-            
+            diccionario.Add(LlaveDiccionario.Escuela, new[] {Escuela});
+            diccionario.Add(LlaveDiccionario.Curso, Escuela.Curso.Cast<ObjetoEscuelaBase>());
+
             return diccionario;
         }
         //sobre carga de metodos    
