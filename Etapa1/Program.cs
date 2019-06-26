@@ -16,13 +16,14 @@ namespace CorEscuela
                 var engine = new EscuelaEngine();
                 engine.Inicializar();
 
-                Printer.WriteTitle("BIENVENIDOS A LA ESCUELA");
+                //Printer.WriteTitle("BIENVENIDOS A LA ESCUELA");
                 //Printer.Beep(10000, cantidad:10);   
-                imprimirCursosEscuela(engine.Escuela);
+                //imprimirCursosEscuela(engine.Escuela);
 
                 var dictmp = engine.GetDiccionarioObjetos();
                 
-                
+                engine.ImprimirDiccionario(dictmp);
+
                 /* Printer.WriteTitle("Diccionario");
                 var dic = new Dictionary<String, String>();
                 dic["luna"] = "cuerpo celeste que gira alrededor de la tierra";
