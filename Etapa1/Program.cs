@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using CorEscuela.app;
 using CorEscuela.Entidades;
 using CorEscuela.Util;
 using static System.Console;
@@ -9,20 +10,26 @@ namespace CorEscuela
 {
     class Program
     {
-        private static Cursos cursotemp;
+        //private static Cursos cursotemp;
 
         static void Main(string[] args)
         {
+                AppDomain.CurrentDomain.ProcessExit += AccionDelEvento;
+                AppDomain.CurrentDomain.ProcessExit += (o,s)=> Printer.Beep(2000,1000,1);
+
                 var engine = new EscuelaEngine();
                 engine.Inicializar();
 
-                //Printer.WriteTitle("BIENVENIDOS A LA ESCUELA");
+                Printer.WriteTitle("BIENVENIDOS A LA ESCUELA");
                 //Printer.Beep(10000, cantidad:10);   
                 //imprimirCursosEscuela(engine.Escuela);
 
-                var dictmp = engine.GetDiccionarioObjetos();
+                var reporteador = new Reporteador(engine.GetDiccionarioObjetos());
+                var evalList = reporteador.GetListaEvaluaciones();
                 
-                engine.ImprimirDiccionario(dictmp);
+                /* var dictmp = engine.GetDiccionarioObjetos();
+                
+                engine.ImprimirDiccionario(dictmp,true); */
 
                 /* Printer.WriteTitle("Diccionario");
                 var dic = new Dictionary<String, String>();
@@ -158,6 +165,13 @@ namespace CorEscuela
             imprimirArregloFor(arregloCursos);
             System.Console.WriteLine("ForEach ===================");
             imprimirArregloForEach(arregloCursos); */
+        }
+
+        private static void AccionDelEvento(object sender, EventArgs e)
+        {
+            Printer.WriteTitle("SALIENDO");
+            Printer.Beep(3000,1000,3);
+            Printer.WriteTitle("SALIENDO");
         }
 
         private static void imprimirCursosEscuela(Escuela escuela)

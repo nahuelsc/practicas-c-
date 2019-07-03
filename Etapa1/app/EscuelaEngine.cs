@@ -1,5 +1,3 @@
-using System.Runtime.InteropServices;
-using System.Dynamic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +5,7 @@ using CorEscuela.Entidades;
 using static System.Console;
 using CorEscuela.Util;
 
-namespace CorEscuela
+namespace CorEscuela.app
 {
     public sealed class EscuelaEngine
     {
@@ -125,6 +123,7 @@ namespace CorEscuela
             diccionario.Add(LlaveDiccionario.Alumno, ListatmpAl);
             return diccionario;
         }
+
         //sobre carga de metodos    
         public IReadOnlyList<ObjetoEscuelaBase> GetObjetosEscuela(
                 bool traeEvaluaciones = true,
@@ -228,6 +227,7 @@ namespace CorEscuela
 #region Metodos de carga
         private void CargarEvaluaciones()
         {
+            Random rnd = new Random();
             foreach (var curso in Escuela.Curso)
             {
                 //foreach (var asignatura in curso.Asignaturas)
@@ -236,7 +236,6 @@ namespace CorEscuela
                     //foreach (var alumno in curso.Alumnos)
                     foreach (var asignatura in curso.Asignaturas)
                     {
-                        Random rnd = new Random();
                         //float aleatorio = rnd.Next(0, 5);
                         for (int i = 0; i < 5; i++)
                         {
@@ -244,7 +243,7 @@ namespace CorEscuela
                             {
                                 Asignatura = asignatura,
                                 Nombre = $"{asignatura.Nombre} ev#{i + 1}",
-                                Nota = (float)Math.Round(5 * rnd.NextDouble(), 2),
+                                Nota = MathF.Round(5 * (float)rnd.NextDouble(), 2),
                                 Alumno = alumno
                             };
                             alumno.Evaluaciones.Add(ev);
