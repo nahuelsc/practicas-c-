@@ -8,7 +8,10 @@ namespace CorEscuela.Util
         {
             WriteLine("".PadLeft(tam, '='));
         }
-
+        public static void PrecioneENTER()
+        {
+            WriteLine("Presione ENTER para continuar");
+        }
         public static void WriteTitle(string title)
         {
             var tamaño = title.Length + 4;

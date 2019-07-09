@@ -178,7 +178,7 @@ namespace CorEscuela.app
 
             if(traeCursos)
                 listObj.AddRange(Escuela.Curso);
-            conteoCursos += Escuela.Curso.Count;
+                conteoCursos += Escuela.Curso.Count;
 
             foreach (var curso in Escuela.Curso)
             {

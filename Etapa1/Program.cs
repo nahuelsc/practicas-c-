@@ -26,7 +26,83 @@ namespace CorEscuela
 
                 var reporteador = new Reporteador(engine.GetDiccionarioObjetos());
                 var evalList = reporteador.GetListaEvaluaciones();
+                var listaAsig = reporteador.GetListaAsignaturas();
+                var listaEvalXAsignatura = reporteador.GetDicEvaluacionesXAsig();
+                var listaProemdioXAsig = reporteador.GetPromeAlumPorAsignatura();
+                var mejorPromedio = reporteador.GetMejoresPromedioXAsig("Matematicas", 10);
+
+                Printer.WriteTitle("Captura de una Evaluacion por Consola");
+                var newEval = new Evaluaciones();
+                string nombre, notaString;
+                float nota;
                 
+                WriteLine("Ingrese el nombre de la Evaluacion");
+                Printer.PrecioneENTER();
+                nombre = ReadLine();
+
+                if(string.IsNullOrWhiteSpace(nombre))
+                {
+                    Printer.WriteTitle("El valor del nombre no puede ser vacio");
+                    WriteLine("Saliendo del programa");
+                }
+                else 
+                {
+                    newEval.Nombre = nombre.ToLower();
+                    WriteLine("El nombre de la Evaluacion ha sido ingresado correctamente");
+                }
+
+                WriteLine("Ingrese la nota de la Evaluacion");
+                Printer.PrecioneENTER();
+                notaString = ReadLine();
+
+                if (string.IsNullOrWhiteSpace(notaString))
+                {
+                    Printer.WriteTitle("El valor de la nota no puede ser vacio");
+                    WriteLine("Saliendo del programa");
+                }
+                else
+                {
+                    try
+                    {
+                        newEval.Nota = float.Parse(notaString);
+
+                        if(newEval.Nota < 0 || newEval.Nota > 5)
+                        {
+                            throw new ArgumentOutOfRangeException("La nota debe estar entre 0 y 5");
+                        }
+                        WriteLine("La nota de la Evaluacion ha sido ingresado correctamente");
+                    }
+                    catch(ArgumentOutOfRangeException arge)
+                    {
+                        Printer.WriteTitle(arge.Message);
+                        WriteLine("Saliendo del programa");
+                    }
+                    catch (System.Exception)
+                    {
+                        Printer.WriteTitle("El valor de la nota no parece es un numero valido");
+                        WriteLine("Saliendo del programa");
+                    }
+                    finally
+                    {
+                        Printer.WriteTitle("FINALLY");
+                        Printer.Beep(2500, 500, 3);
+                    }
+                }
+
+
+
+
+
+
+
+                /* foreach (var item in listaProemdioXAsig)
+                {
+                    foreach (var alum in item.Value)
+                    {
+                        var tmp = alum as Alumnos;
+
+                    }
+                } */
                 /* var dictmp = engine.GetDiccionarioObjetos();
                 
                 engine.ImprimirDiccionario(dictmp,true); */

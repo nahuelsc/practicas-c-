@@ -9,6 +9,7 @@ namespace CorEscuela.Entidades
         public Alumnos Alumno { get; set; }
         public Asignatura Asignatura { get; set; }
         public float Nota { get; set; }
+        
         /* public Evaluaciones()
         {
             UniqueId = Guid.NewGuid().ToString();
